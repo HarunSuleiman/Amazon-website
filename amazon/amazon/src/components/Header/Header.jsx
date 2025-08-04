@@ -50,19 +50,19 @@ function Header() {
               </select>
             </a>
             {/* Three components */}
-            <a href="">
+            <a href="/SignIn">
               <div>
                 <p>Sign In</p>
                 <span>Account & Lists</span>
               </div>
             </a>
             {/* orders */}
-            <a href="">
+            <a href="/orders">
               <p>returns</p>
               <span>& Orders</span>
             </a>
             {/* cart */}
-            <a href="" className={classes.cart}>
+            <a href="/cart" className={classes.cart}>
               <FiShoppingCart size={35} />
               <span>0</span>
             </a>
