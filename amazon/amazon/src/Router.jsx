@@ -6,7 +6,7 @@ import SignUp from "./components/Pages/Auth/Signup.jsx";
 import Payment from "./components/Pages/Payment/Payment.jsx";
 import Orders from "./components/Pages/Orders/Orders.jsx";
 import Cart from "./components/Pages/Cart/Cart.jsx";
-import LayOut from "./components/LayOut/LayOut.jsx";
+
 function Routing() {
   return (
     <Router>
