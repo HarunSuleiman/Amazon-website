@@ -4,6 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { FiShoppingCart } from "react-icons/fi";
 import classes from "../Header/Header.module.css";
 import LowerHeader from "./LowerHeader";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -50,22 +51,22 @@ function Header() {
               </select>
             </a>
             {/* Three components */}
-            <a href="/SignIn">
+            <Link to={"SignIn"}>
               <div>
                 <p>Sign In</p>
                 <span>Account & Lists</span>
               </div>
-            </a>
+            </Link>
             {/* orders */}
-            <a href="/orders">
+            <Link to={"/orders"}>
               <p>returns</p>
               <span>& Orders</span>
-            </a>
+            </Link>
             {/* cart */}
-            <a href="/cart" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <FiShoppingCart size={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
