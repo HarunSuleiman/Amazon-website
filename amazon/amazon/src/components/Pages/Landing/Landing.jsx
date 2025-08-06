@@ -4,7 +4,8 @@ import Header from "../../Header/Header.jsx";
 import Category from "../../Category/Category.jsx";
 import { Outlet } from "react-router-dom";
 import Product from "../../Product/Product.jsx";
-import CarouselEffect from "../../carousel/Carousel.jsx";
+import CarouselEffect from "../../../components/Carousel/Carousel.jsx";
+
 function Landing() {
   return (
     <div>

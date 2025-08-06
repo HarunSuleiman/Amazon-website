@@ -5,5 +5,8 @@
     margin: 100px auto 100px auto;
     gap: 50px;
     justify-items: center;
-    /* margin: 10px auto; */
+   
+}
+.product_container section{
+    margin: 0 auto;
 }

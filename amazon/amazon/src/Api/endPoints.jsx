@@ -1,1 +1,1 @@
-export const productUrl = "https://fakestoreapi.com";
+export const ProductUrl = "https://fakestoreapi.com";

@@ -7,6 +7,7 @@ import Payment from "./components/Pages/Payment/Payment.jsx";
 import Orders from "./components/Pages/Orders/Orders.jsx";
 import Cart from "./components/Pages/Cart/Cart.jsx";
 import Results from "./components/Pages/Results/Result.jsx"
+import ProductDetail from "./components/Pages/ProductDetail/ProductDetail.jsx"
 
 function Routing() {
   return (
@@ -15,10 +16,11 @@ function Routing() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/SignIn" element={<SignUp />} />
-        <Route path="/payments" element={<Payment />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/category/:name" element={<Results/>} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/Payments" element={<Payment />} />
+        <Route path="/Orders" element={<Orders />} />
+        <Route path="/category/:Name" element={<Results />} />
+        <Route path="/products/:ProductId" element={<ProductDetail />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
     </Router>
   );

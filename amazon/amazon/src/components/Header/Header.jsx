@@ -58,12 +58,12 @@ function Header() {
               </div>
             </Link>
             {/* orders */}
-            <Link to={"/orders"}>
+            <Link to={"/Orders"}>
               <p>returns</p>
               <span>& Orders</span>
             </Link>
             {/* cart */}
-            <Link to="/cart" className={classes.cart}>
+            <Link to="/Cart" className={classes.cart}>
               <FiShoppingCart size={35} />
               <span>0</span>
             </Link>
