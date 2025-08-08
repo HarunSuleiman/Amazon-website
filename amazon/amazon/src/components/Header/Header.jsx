@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GrSearch } from "react-icons/gr";
 import { SlLocationPin } from "react-icons/sl";
 import { FiShoppingCart } from "react-icons/fi";
 import classes from "../Header/Header.module.css";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider/DataProvider";
 
 function Header() {
+  const [{ basket }, dispach] = useContext(DataContext);
+  console.log(basket.length);
+
   return (
-    <>
+    <section className={classes.fixed}>
       <section>
         <div className={classes.header_container}>
           <div className={classes.logo_container}>
@@ -65,13 +69,13 @@ function Header() {
             {/* cart */}
             <Link to="/Cart" className={classes.cart}>
               <FiShoppingCart size={35} />
-              <span>0</span>
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>
       </section>
       <LowerHeader />
-    </>
+    </section>
   );
 }
 

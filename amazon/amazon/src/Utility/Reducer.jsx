@@ -1,0 +1,35 @@
+import { useReducer } from "react"
+import { Type } from "./Action.type"
+import Switch from "@mui/material/Switch"
+export const initialState={
+    basket:[]
+} 
+export const reducer=(state,action)=>{
+switch (action.type){
+    case Type.ADD_TO_BASKET:
+    //Check if the item exist
+    const existingItem=state.basket.find((item)=>item.id===action.item.id)
+    if (!existingItem) {
+      return {
+        ...state,
+        basket: [...state.basket, { ...action.item, amount: 1 }],
+      };
+    } else {
+    const updatedBasket=state.basket.map((item)=>{
+        return item.id===action.item.id?{...item,amount:item.amount+1}:item
+    })
+    return{
+        ...state,basket:updatedBasket
+    }
+    }
+    default:
+        return state;
+
+
+
+
+
+       
+}
+}
+// const [state,dispach]=useReducer(reducer,initialState)

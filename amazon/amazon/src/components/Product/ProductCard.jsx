@@ -1,13 +1,26 @@
-import React from "react";
+import React, { use, useContext } from "react";
 import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat.jsx";
 import classes from "../Product/Product.module.css";
 import { Link } from "react-router-dom";
-function ProductCard({ Product, flex, renderDesc }) {
+import { DataContext } from "../DataProvider/DataProvider.jsx";
+import { Type } from "../../Utility/Action.type.jsx";
+function ProductCard({ Product, flex, renderDesc,renderAdd }) {
   if (!Product || !Product.image || !Product.rating || !Product.id) {
     return <div>Loading...</div>;
   }
   const { image, title, id, rating, price,description } = Product;
+    
+const [state,dispach]=useContext(DataContext)
+// console.log(state)
+const addToCart=()=>{
+  dispach({
+    type: Type.ADD_TO_BASKET,
+    item: { image, title, id, rating, price, description },
+  });
+}
+
+
 
   return (
     <div
@@ -16,15 +29,11 @@ function ProductCard({ Product, flex, renderDesc }) {
       }`}
     >
       <Link to={`/products/${id}`}>
-        <img
-          src={image}
-          alt="Click here for detail information"
-          className={classes.img_container}
-        />
+        <img src={image} alt="CLICK HERE for more information" />
       </Link>
       <div>
         <h3>{title}</h3>
-        {renderDesc && <div style={{maxWidth:"650px"}}>{description}</div>}
+        {renderDesc && <div style={{ maxWidth: "650px" }}>{description}</div>}
         <div className={classes.rating}>
           {/* rating */}
           <Rating value={rating.rate} precision={0.1} readOnly />
@@ -35,7 +44,12 @@ function ProductCard({ Product, flex, renderDesc }) {
           {/* price */}
           <CurrencyFormat amount={price} />
         </div>
-        <button>add to cart</button>
+
+        {renderAdd && (
+          <button className={classes.button} onClick={addToCart}>
+            add to cart
+          </button>
+        )}
       </div>
     </div>
   );
