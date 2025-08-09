@@ -29,7 +29,9 @@ const addToCart=()=>{
       }`}
     >
       <Link to={`/products/${id}`}>
-        <img src={image} alt="CLICK HERE for more information" />
+        <img src = { image }
+
+         alt="CLICK HERE for more/detail information " />
       </Link>
       <div>
         <h3>{title}</h3>
