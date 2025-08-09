@@ -8,6 +8,7 @@ import { ProductUrl } from "../../../Api/endPoints";
 import ProductCard from "../../Product/ProductCard.jsx";
 
 import Loader from "../../Loader/Loader.jsx";
+import LayOut from "../../LayOut/LayOut.jsx";
 
 function ProductDetail() {
   const { ProductId } = useParams();
@@ -30,7 +31,7 @@ function ProductDetail() {
   }, []);
   // console.log(productId);
   return (
-    <>
+    <LayOut>
       <h1>Result Detail:</h1>
       <hr />
       {isLoading ? <Loader /> : <ProductCard Product={Product} 
@@ -39,7 +40,7 @@ function ProductDetail() {
      renderAdd={true}
                   />
       }
-    </>
+    </LayOut>
   );
 }
 

@@ -1,8 +1,8 @@
 import React from 'react'
-
+import LayOut from '../../LayOut/LayOut'
 function Orders() {
   return (
-    <div>Orders</div>
+    <LayOut>Orders</LayOut>
   )
 }
 

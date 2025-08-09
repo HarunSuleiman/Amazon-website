@@ -58,7 +58,7 @@ function Header() {
               </select>
             </a>
             {/* Three components */}
-            <Link to={"SignIn"}>
+            <Link to={"/Auth"}>
               <div>
                 <p>Sign In</p>
                 <span>Account & Lists</span>

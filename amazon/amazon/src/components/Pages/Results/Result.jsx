@@ -5,7 +5,7 @@ import ProductCard from "../../Product/ProductCard.jsx";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ProductUrl } from "../../../Api/endPoints";
-
+import LayOut from "../../LayOut/LayOut.jsx";
 import classes from "../Results/Result.module.css";
 import Loader from "../../Loader/Loader.jsx";
 function Result() {
@@ -34,7 +34,7 @@ function Result() {
   }, [categoryName]);
 
   return (
-    <>
+    <LayOut>
       {isLoading ? (
         <Loader />
       ) : (
@@ -57,7 +57,7 @@ function Result() {
           </div>
         </section>
       )}
-    </>
+    </LayOut>
   );
 }
 

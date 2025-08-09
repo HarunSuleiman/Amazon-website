@@ -1,5 +1,5 @@
 import React from "react";
-// import LayOut from '../../LayOut/LayOut';
+import LayOut from '../../LayOut/LayOut';
 import Header from "../../Header/Header.jsx";
 import Category from "../../Category/Category.jsx";
 import { Outlet } from "react-router-dom";
@@ -8,13 +8,13 @@ import CarouselEffect from "../../../components/Carousel/Carousel.jsx";
 
 function Landing() {
   return (
-    <div>
+    <LayOut>
       {/* <Header /> */}
-      <Outlet />
+      {/* <Outlet /> */}
       <CarouselEffect />
       <Category />
       <Product />
-    </div>
+    </LayOut>
   );
 }
 
