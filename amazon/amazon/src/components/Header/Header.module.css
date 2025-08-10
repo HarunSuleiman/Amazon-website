@@ -62,6 +62,7 @@
     padding: 7px;
     background: #fabd69;
     color: #1a1a1a;
+    height:40px;
 }
 .search svg:hover{
     background-color: #d49644;

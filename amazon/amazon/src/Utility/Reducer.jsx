@@ -3,6 +3,8 @@ import { Type } from "./Action.type";
 import Switch from "@mui/material/Switch";
 export const initialState = {
   basket: [],
+  // For signIn
+  user:null
 };
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -46,7 +48,13 @@ export const reducer = (state, action) => {
         basket: newBasket,
       };
     //...for  + or - functionality
-
+    //  For signIn....
+    case Type.SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
+    // ...For signIn
     default:
       return state;
   }

@@ -6,13 +6,14 @@ import classes from "../Header/Header.module.css";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+// for sign out...
+import { auth } from "../../Utility/Firebase";
 
 function Header() {
-  const [{ basket }, dispach] = useContext(DataContext);
- const totalItem=basket?.reduce((amount,item)=>{
-  return item.amount+amount
- },0)
-
+  const [{ user }, { basket }, dispach] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
 
   return (
     <section className={classes.fixed}>
@@ -58,10 +59,23 @@ function Header() {
               </select>
             </a>
             {/* Three components */}
-            <Link to={"/Auth"}>
+            <Link to={!user && "/Auth"}>
               <div>
-                <p>Sign In</p>
-                <span>Account & Lists</span>
+                <div>
+                  {user ? (
+                    <>
+                      <p>Hello {user?.email?.split("@")[0]}</p>
+                      <span onClick={()=>auth.signOut()}>Sign Out</span>
+                    </>
+                  ) : (
+                    <>
+                      <p>Hello,Sign In</p>
+                      <span>Account & Lists</span>
+                    </>
+                  )}
+                </div>
+
+                {/* <p>Sign In</p> */}
               </div>
             </Link>
             {/* orders */}
